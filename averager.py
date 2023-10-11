@@ -1,3 +1,6 @@
+# references
+# https://www.influxdata.com/blog/how-to-control-crowds-python-opencv-influxdb/
+
 import cv2
 import numpy as np
 
@@ -17,7 +20,7 @@ def get_dominant_color(image, rect):
 
     return dominant_color
 
-def display_dominant_color(frame, dominant_color):
+def draw_main_color(frame, dominant_color):
     color_block = np.zeros((100, 100, 3), dtype=np.uint8)
     color_block[:, :] = dominant_color
 
@@ -38,7 +41,7 @@ while True:
 
     dominant_color = get_dominant_color(frame, central_rect)
 
-    display_dominant_color(frame, dominant_color)
+    draw_main_color(frame, dominant_color)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
