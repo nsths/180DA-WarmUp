@@ -26,7 +26,6 @@ def draw_main_color(frame, dominant_color):
 
     frame[10:110, 10:110] = color_block
 
-    #cv2.rectangle(frame, (central_rect[0], central_rect[1]), (central_rect[0] + central_rect[2], central_rect[1] + central_rect[3]), (255, 0, 0), 2)
     cv2.imshow("Video Feed", frame)
 
 cap = cv2.VideoCapture(0)
